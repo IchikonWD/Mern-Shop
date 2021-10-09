@@ -11,6 +11,7 @@ const Home = () => {
         {products.map((product) => (
           <Col key={product._id} xs={12} sm={6} md={4} lg={3}>
             <div className='product-card'>
+              <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <p>{product.price}</p>
