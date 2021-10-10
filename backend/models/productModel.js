@@ -1,29 +1,5 @@
 import Mongoose from 'mongoose';
 
-// Manufacturer Schema
-
-const manufacturerSchema = Mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    cif: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    adress: {
-      type: String,
-      required: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
-
 // Review System Schema
 
 const reviewSchema = Mongoose.Schema(
@@ -95,7 +71,22 @@ const productSchema = Mongoose.Schema(
       required: true,
       default: 0,
     },
-    manufacturer: [manufacturerSchema],
+    manufacturer: {
+      name: {
+        type: String,
+        required: true,
+        unique: false,
+      },
+      cif: {
+        type: String,
+        required: true,
+      },
+      adress: {
+        type: String,
+        required: true,
+      },
+    },
+
     reviews: [reviewSchema],
   },
   {
