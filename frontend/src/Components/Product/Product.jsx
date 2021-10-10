@@ -47,16 +47,16 @@ const Product = ({ match }) => {
                 <Row>
                   <Col>Status:</Col>
                   <Col>
-                    {product.countInStock > 0 ? (
-                      <span className='badge-success'>In Stock</span>
-                    ) : (
-                      <span className='badge-danger'>Out of Stock</span>
-                    )}
+                    {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
                   </Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Button className='w-100' type='button'>
+                <Button
+                  className='w-100'
+                  type='button'
+                  disabled={product.countInStock === 0}
+                >
                   Add To Cart
                 </Button>
               </ListGroup.Item>
