@@ -76,7 +76,12 @@ const products = [
     countInStock: 0,
     rating: 4,
     numReviews: 12,
+    manufacturer: {
+      name: 'Amazon',
+      CIF: '12345678A',
+      adress: 'Calle de la Amazonia, 1, 28001 Madrid',
+    },
   },
-]
+];
 
-export default products
+export default products;
