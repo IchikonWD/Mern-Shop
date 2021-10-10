@@ -43,6 +43,7 @@ const deleteData = async () => {
     await User.deleteMany();
 
     console.log('Data Deleted...'.red.inverse);
+    process.exit(1);
   } catch (err) {
     console.error(`${err}`.red.inverse);
     process.exit(1);
