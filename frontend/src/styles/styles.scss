@@ -1,0 +1,14 @@
+// Language: scss
+// Path: frontend/src/styles/styles.scss
+
+//Bootstrap
+@import './bootstrap/bootstrap.scss';
+
+//Main Theme
+@import './components/_bootswatch';
+
+// Views
+@import './views/_index';
+
+//Variables
+@import './utils/_variables';
