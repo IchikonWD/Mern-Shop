@@ -1,10 +1,8 @@
 // Lux 5.1.2
-// Bootswatch
-
 
 // Variables
 
-$web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" !default;
+$web-font-path: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap' !default;
 @if $web-font-path {
   @import url($web-font-path);
 }
@@ -18,8 +16,8 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;6
 
   &-nav {
     .nav-link {
-      padding-top: .715rem;
-      padding-bottom: .715rem;
+      padding-top: 0.715rem;
+      padding-bottom: 0.715rem;
     }
   }
 
@@ -29,11 +27,11 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;6
 }
 
 .bg-primary {
-  background-color: theme-color("primary") !important;
+  background-color: theme-color('primary') !important;
 }
 
 .bg-light {
-  border: 1px solid rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   &.navbar-fixed-top {
     border-width: 0 0 1px;
@@ -49,6 +47,14 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;6
 }
 
 // Buttons
+.w-100 {
+  background-color: $gray-800 !important;
+  border: rgba($gray-400, 0.5) !important;
+  &:hover {
+    background-color: $gray-700 !important;
+    border: rgba($gray-400, 0.5) !important;
+  }
+}
 
 .btn {
   font-size: $font-size-sm;
@@ -81,11 +87,11 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;6
   }
 
   &:not([disabled]):not(.disabled):focus {
-    box-shadow: 0 0 0 .2rem rgba($gray-400, .5);
+    box-shadow: 0 0 0 0.2rem rgba($gray-400, 0.5);
   }
 }
 
-[class*="btn-outline-"] {
+[class*='btn-outline-'] {
   border-width: 2px;
 }
 
@@ -130,7 +136,7 @@ th {
   &-sm {
     th,
     td {
-      padding: .75rem;
+      padding: 0.75rem;
     }
   }
 }
@@ -145,7 +151,7 @@ th {
 // Indicators
 
 .badge {
-  padding-top: .28rem;
+  padding-top: 0.28rem;
 
   &-pill {
     border-radius: 10rem;

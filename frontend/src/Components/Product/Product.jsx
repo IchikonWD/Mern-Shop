@@ -56,7 +56,7 @@ const Product = ({ match }) => {
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Button className='btn-block' type='button'>
+                <Button className='w-100' type='button'>
                   Add To Cart
                 </Button>
               </ListGroup.Item>
