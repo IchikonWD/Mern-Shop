@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import Rating from '../../Components/Rating';
 import Message from '../Message';
@@ -28,7 +29,9 @@ const Home = () => {
             <Col key={product._id} xs={12} sm={6} md={4} lg={3}>
               <div className='product-card'>
                 <img src={product.image} alt={product.name} />
-                <h3>{product.name}</h3>
+                <Link to={`/product/${product._id}`}>
+                  <h3>{product.name}</h3>
+                </Link>
                 <p>{product.description}</p>
                 <p>{product.price}</p>
                 <Rating
