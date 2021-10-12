@@ -5,8 +5,8 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { logout } from '../../actions/userActions';
 
 const Navegation = () => {
-  const userLogin = useSelector((state) => state.user);
-  const { user } = userLogin;
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const dispatch = useDispatch();
 
@@ -29,8 +29,8 @@ const Navegation = () => {
                   <i className='fas fa-shopping-cart'></i> Cart
                 </Nav.Link>
               </LinkContainer>
-              {user ? (
-                <NavDropdown title={user.name} id='username'>
+              {userInfo ? (
+                <NavDropdown title={userInfo.name} id='username'>
                   <LinkContainer to='/profile'>
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
