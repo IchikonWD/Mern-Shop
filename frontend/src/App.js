@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import Product from './Components/Product';
 import Cart from './Components/Cart';
 import Login from './Components/Login';
+import Register from './Components/Register';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/product/:id' component={Product} />
           <Route path='/cart/:id?' component={Cart} />
           <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
         </Container>
       </main>
       <Footer />
