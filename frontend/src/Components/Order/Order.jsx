@@ -87,7 +87,7 @@ const Order = ({ match }) => {
               </p>
               {order.data.isDelivered ? (
                 <Message variant='success'>
-                  Delivered on {order.data.deliveredAt}
+                  Delivered on {order.data.deliveredAt.substring(0, 10)}
                 </Message>
               ) : (
                 <Message variant='danger'>Not Delivered</Message>
@@ -100,7 +100,9 @@ const Order = ({ match }) => {
                 {order.data.paymentMethod}
               </p>
               {order.data.isPaid ? (
-                <Message variant='success'>Paid on {order.data.paidAt}</Message>
+                <Message variant='success'>
+                  Paid on {order.data.paidAt.substring(0, 10)}
+                </Message>
               ) : (
                 <Message variant='danger'>Not Paid</Message>
               )}
