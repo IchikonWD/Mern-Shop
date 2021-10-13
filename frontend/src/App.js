@@ -12,6 +12,7 @@ import Profile from './Components/Profile';
 import Shipping from './Components/Shipping';
 import Payment from './Components/Payment';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
+import Order from './Components/Order';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/shipping' component={Shipping} />
           <Route path='/payment' component={Payment} />
           <Route path='/placeorder' component={PlaceOrder} />
+          <Route path='/order/:id' component={Order} />
         </Container>
       </main>
       <Footer />
