@@ -11,6 +11,7 @@ import Register from './Components/Register';
 import Profile from './Components/Profile';
 import Shipping from './Components/Shipping';
 import Payment from './Components/Payment';
+import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/register' component={Register} />
           <Route path='/shipping' component={Shipping} />
           <Route path='/payment' component={Payment} />
+          <Route path='/placeorder' component={PlaceOrder} />
         </Container>
       </main>
       <Footer />
