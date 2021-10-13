@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../Form';
+import CheckoutSteps, { checkOutSteps } from '../CheckoutSteps';
 import { saveShippingAdress } from '../../actions/cartActions';
 
 const Shipping = ({ history }) => {
@@ -31,61 +32,64 @@ const Shipping = ({ history }) => {
   };
 
   return (
-    <FormContainer>
-      <Form.Group controlId='adress'>
-        <Form.Label>Adress</Form.Label>
-        <Form.Control
-          type='text'
-          placeholder='Adress'
-          value={adress}
-          required
-          onChange={(e) => setAdress(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group controlId='city'>
-        <Form.Label>City</Form.Label>
-        <Form.Control
-          type='text'
-          placeholder='City'
-          value={city}
-          required
-          onChange={(e) => setCity(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group controlId='state'>
-        <Form.Label>State</Form.Label>
-        <Form.Control
-          type='text'
-          placeholder='State'
-          value={state}
-          required
-          onChange={(e) => setState(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group controlId='postalCode'>
-        <Form.Label>Postal Code</Form.Label>
-        <Form.Control
-          type='text'
-          placeholder='postalCode'
-          value={postalCode}
-          required
-          onChange={(e) => setpostalCode(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group controlId='country'>
-        <Form.Label>Country</Form.Label>
-        <Form.Control
-          type='text'
-          placeholder='Country'
-          value={country}
-          required
-          onChange={(e) => setCountry(e.target.value)}
-        />
-      </Form.Group>
-      <Button variant='primary' type='submit' onClick={submitHandler}>
-        Next
-      </Button>
-    </FormContainer>
+    <>
+      <CheckoutSteps step1 step2 />
+      <FormContainer>
+        <Form.Group controlId='adress'>
+          <Form.Label>Adress</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Adress'
+            value={adress}
+            required
+            onChange={(e) => setAdress(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId='city'>
+          <Form.Label>City</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='City'
+            value={city}
+            required
+            onChange={(e) => setCity(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId='state'>
+          <Form.Label>State</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='State'
+            value={state}
+            required
+            onChange={(e) => setState(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId='postalCode'>
+          <Form.Label>Postal Code</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Postal Code'
+            value={postalCode}
+            required
+            onChange={(e) => setpostalCode(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId='country'>
+          <Form.Label>Country</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Country'
+            value={country}
+            required
+            onChange={(e) => setCountry(e.target.value)}
+          />
+        </Form.Group>
+        <Button variant='primary' type='submit' onClick={submitHandler}>
+          Next
+        </Button>
+      </FormContainer>
+    </>
   );
 };
 
