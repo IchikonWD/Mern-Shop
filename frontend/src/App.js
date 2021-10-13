@@ -10,6 +10,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import Profile from './Components/Profile';
 import Shipping from './Components/Shipping';
+import Payment from './Components/Payment';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/profile' component={Profile} />
           <Route path='/register' component={Register} />
           <Route path='/shipping' component={Shipping} />
+          <Route path='/payment' component={Payment} />
         </Container>
       </main>
       <Footer />
