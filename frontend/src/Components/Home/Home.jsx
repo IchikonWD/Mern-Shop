@@ -2,19 +2,27 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
+import { Card } from 'react-bootstrap';
+import { useMediaQuery } from 'react-responsive';
 import Rating from '../../Components/Rating';
 import Message from '../Message';
 import Loader from '../Loader';
 import { listProducts } from '../../actions/productActions';
 
-const Home = () => {
+const Home = ({ match }) => {
+  const keyword = match.params.keyword;
+
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
 
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 992px)',
+  });
+
   useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+    dispatch(listProducts(keyword));
+  }, [dispatch, keyword]);
 
   const columns = [
     {
@@ -61,12 +69,11 @@ const Home = () => {
   return (
     <>
       <h1>Latest Products</h1>
-
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
-      ) : (
+      ) : isDesktopOrLaptop ? (
         <DataTable
           columns={columns}
           data={tableData}
@@ -74,6 +81,34 @@ const Home = () => {
           defaultSortFieldId={0}
           responsive
         />
+      ) : (
+        <>
+          {products.map((product) => (
+            <Card key={product._id} className='my-3 p-3 rounded'>
+              <Link to={`/product/${product._id}`}>
+                <Card.Img src={product.image} variant='top' />
+              </Link>
+
+              <Card.Body>
+                <Link to={`/product/${product._id}`}>
+                  <Card.Title as='div'>
+                    <strong>{product.name}</strong>
+                  </Card.Title>
+                </Link>
+
+                <Card.Text as='div'>
+                  <Rating
+                    value={product.rating}
+                    text={`${product.numReviews} reviews`}
+                  />
+                </Card.Text>
+                <Card.Text>{product.description}</Card.Text>
+
+                <Card.Text as='h3'>${product.price}</Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
+        </>
       )}
     </>
   );
