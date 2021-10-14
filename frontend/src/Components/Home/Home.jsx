@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Row, Col } from 'react-bootstrap';
 import DataTable from 'react-data-table-component';
 import Rating from '../../Components/Rating';
 import Message from '../Message';
